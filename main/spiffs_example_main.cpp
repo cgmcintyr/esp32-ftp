@@ -16,17 +16,17 @@
 
 static const char *TAG = "example";
 
-extern "C" void app_main(void)
+void setup()
 {
     ESP_LOGI(TAG, "Initializing SPIFFS");
-    
+
     esp_vfs_spiffs_conf_t conf = {
       .base_path = "/spiffs",
       .partition_label = NULL,
       .max_files = 5,
       .format_if_mount_failed = true
     };
-    
+
     // Use settings defined above to initialize and mount SPIFFS filesystem.
     // Note: esp_vfs_spiffs_register is an all-in-one convenience function.
     esp_err_t ret = esp_vfs_spiffs_register(&conf);
@@ -41,7 +41,7 @@ extern "C" void app_main(void)
         }
         return;
     }
-    
+
     size_t total = 0, used = 0;
     ret = esp_spiffs_info(NULL, &total, &used);
     if (ret != ESP_OK) {
@@ -49,6 +49,11 @@ extern "C" void app_main(void)
     } else {
         ESP_LOGI(TAG, "Partition size: total: %d, used: %d", total, used);
     }
+}
+
+extern "C" void app_main(void)
+{
+    setup();
 
     // Use POSIX and C standard library functions to work with files.
     // First create a file.
