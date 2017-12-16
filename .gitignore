@@ -1,4 +1,5 @@
 build/
+sdkconfig.old
 
 # Prerequisites
 *.d
