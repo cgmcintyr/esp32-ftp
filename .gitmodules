@@ -2,3 +2,7 @@
 	path = components/esp8266FTPServer
 	url = git@github.com:cgmcintyr/esp8266FTPServer.git
 	branch = master
+[submodule "components/arduino-esp32"]
+	path = components/arduino-esp32
+	url = git@github.com:espressif/arduino-esp32.git
+	branch = master
