@@ -16,7 +16,7 @@
 
 static const char *TAG = "example";
 
-void app_main(void)
+extern "C" void app_main(void)
 {
     ESP_LOGI(TAG, "Initializing SPIFFS");
     
