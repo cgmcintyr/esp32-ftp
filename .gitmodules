@@ -1,0 +1,4 @@
+[submodule "components/esp8266FTPServer"]
+	path = components/esp8266FTPServer
+	url = git@github.com:cgmcintyr/esp8266FTPServer.git
+	branch = master
